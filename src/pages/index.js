@@ -1,149 +1,130 @@
-import * as React from "react"
+import * as React from "react";
+import './index.css';
+import { Link } from "gatsby";
+import one from '../images/1.jpg';
+import two from '../images/2.jpg';
+import three from '../images/3.jpg';
+import four from '../images/4.jpg';
+import five from '../images/5.jpg';
+import six from '../images/6.jpg';
+import seven from '../images/7.jpg';
+import eight from '../images/8.jpg';
+import nine from '../images/9.jpg';
+import ten from '../images/10.jpg';
+import eleven from '../images/11.jpg';
+import twelve from '../images/12.jpg';
+import thirteen from '../images/13.jpg';
+import fourteen from '../images/14.jpg';
+import fifteen from '../images/15.jpg';
+import sixteen from '../images/16.jpg';
+import seventeen from '../images/17.jpg';
+import eighteen from '../images/18.jpg';
+import nineteen from '../images/19.jpg';
+import twenty from '../images/20.jpg';
+import twentyone from '../images/21.jpg';
+import twentytwo from '../images/22.jpg';
+import twentythree from '../images/23.jpg';
+import twentyfour from '../images/24.jpg';
+import twentyfive from '../images/25.jpg';
+import twentysix from '../images/26.jpg';
+import twentyseven from '../images/27.jpg';
+import twentyeight from '../images/28.jpg';
+import twentynine from '../images/29.jpg';
+import thirty from '../images/30.jpg';
+import thirtyone from '../images/31.jpg';
+import thirtytwo from '../images/32.jpg';
+import thirtythree from '../images/33.jpg';
+import thirtyfour from '../images/34.jpg';
+import thirtyfive from '../images/35.jpg';
+import thirtysix from '../images/36.jpg';
+import thirtyseven from '../images/37.jpg';
+import thirtyeight from '../images/38.jpg';
+import thirtynine from '../images/39.jpg';
+import fourty from '../images/40.jpg';
+import logo from '../../logo.png';
+import {useState} from 'react';
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: "300",
-  fontSize: "24px",
-  maxWidth: "560px",
-}
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: "16px",
-  verticalAlign: "5%",
-}
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: "14px",
-}
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#000000",
-  },
-]
 
-// markup
+
+
 const IndexPage = () => {
+  const [men, setMen] = useState(false);
+  const changeMen = () =>{
+    setMen(!men);
+  }
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
+    <div>
+      <nav>
+          <img src={logo} className='logo'  alt='logo'/>
+          <div className='links'>
+            <Link to='/'className='active'>Home</Link>
+            <a href='https://proofing.monicajohanson.com/'>Galleries</a>
+            <Link to='about'>About Me</Link>
+            <Link to='contact'>Contact Me</Link>
+          </div>
+          <div class="container" onClick={changeMen}>
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+          </div>
+      </nav>
+      {men && 
+        <div className='moblinks'>
+          <Link to='/'className='active'>Home</Link>
+            <a href='https://proofing.monicajohanson.com/'>Galleries</a>
+            <Link to='about'>About Me</Link>
+            <Link to='contact'>Contact Me</Link>
+
+        </div>
+      }
+    <main>
+    
+      <img src={one}  alt='photo'/>
+      <img src={two} alt='photo'/>
+      <img src={three} alt='photo'/>
+      <img src={four} alt='photo'/>
+      <img src={five} alt='photo'/>
+      <img src={six} alt='photo'/>
+      <img src={seven} alt='photo'/>
+      <img src={eight} alt='photo'/>
+      <img src={nine} alt='photo'/>
+      <img src={ten} alt='photo'/>
+      <img src={eleven} alt='photo'/>
+      <img src={twelve} alt='photo'/>
+      <img src={thirteen} alt='photo'/>
+      <img src={fourteen} alt='photo'/>
+      <img src={fifteen} alt='photo'/>
+      <img src={sixteen} alt='photo'/>
+      <img src={seventeen} alt='photo'/>
+      <img src={eighteen} alt='photo'/>
+      <img src={nineteen} alt='photo'/>
+      <img src={twenty} alt='photo'/>
+      <img src={twentyone} alt='photo'/>
+      <img src={twentytwo} alt='photo'/>
+      <img src={twentythree} alt='photo'/>
+      <img src={twentyfour} alt='photo'/>
+      <img src={twentyfive} alt='photo'/>
+      <img src={twentysix} alt='photo'/>
+      <img src={twentyseven} alt='photo'/>
+      <img src={twentyeight} alt='photo'/>
+      <img src={twentynine} alt='photo'/>
+      <img src={thirty} alt='photo'/>
+      <img src={thirtyone} alt='photo'/>
+      <img src={thirtytwo} alt='photo'/>
+      <img src={thirtythree} alt='photo'/>
+      <img src={thirtyfour} alt='photo'/>
+      <img src={thirtyfive} alt='photo'/>
+      <img src={thirtysix} alt='photo'/>
+      <img src={thirtyseven} alt='photo'/>
+      <img src={thirtyeight} alt='photo'/>
+      <img src={thirtynine} alt='photo'/>
+      <img src={fourty} alt='photo'/> 
     </main>
+    </div>
   )
 }
 
